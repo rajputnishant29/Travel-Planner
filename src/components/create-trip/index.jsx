@@ -9,6 +9,7 @@ import { TbLoader } from "react-icons/tb";
 import { db } from '../../service/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
 import Header from '../custom/Header';
+import { RotatingCircleLoader } from 'react-loaders-kit';
 
 function CreateTrip() {
     const [place, setPlace] = useState();
@@ -83,70 +84,79 @@ function CreateTrip() {
             }
         }
     };
+    const loaderProps = {
+        loading,
+        size: 40,
+        duration: 1.2,
+        colors: ['#5e22f0', '#5e22f0', '#f6b93b', '#ef5777'],
+    }
 
     return (
+        
         <div>
             <Header />
-            <div className='sm:px-10 md:px-32 lg:px-56 px-5 mt-10'>
-                <h2 className='font-bold text-3xl'>Tell us your travel preferences</h2>
-                <p className='mt-3 text-gray-500 text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse magni rem quas tempora.</p>
-                <div className='mt-10 flex flex-col gap-5'>
-                    <div>
-                        <h2 className='text-xl my-3 font-medium'>What is the destination of choice?</h2>
-                        <Input
-                            placeholder={'Ex. New York'}
-                            type="text"
-                            onChange={(e) => handleInputChange('location', e.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <h2 className='text-xl my-3 font-medium'>For how many days are you planning your trip?</h2>
-                        <Input
-                            placeholder={"Ex. 3"}
-                            type="number"
-                            onChange={(e) => handleInputChange('noOfDays', e.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <h2 className='text-xl my-3 font-medium'>Who is travelling?</h2>
-                        <div className='grid grid-cols-3 gap-5 mt-5'>
-                            {SelectTravelsList.map((item, index) => (
-                                <div
-                                    key={index}
-                                    onClick={() => handleInputChange('peoples', item.title)}
-                                    className={`p-4 border cursor-pointer rounded-lg hover:shadow-lg ${formData?.peoples === item.title ? 'shadow-lg border-black' : ''}`}
-                                >
-                                    <h2 className='text-3xl'>{item.icon}</h2>
-                                    <h2 className='font-bold text-lg'>{item.title}</h2>
-                                    <h2 className='text-sm text-gray-600'>{item.Desc}</h2>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                    <div>
-                        <h2 className='text-xl my-3 font-medium'>What is your budget?</h2>
-                        <div className='grid grid-cols-3 gap-5 mt-5'>
-                            {SelectBudget.map((item, index) => (
-                                <div
-                                    key={index}
-                                    onClick={() => handleInputChange('budget', item.title)}
-                                    className={`p-4 border cursor-pointer rounded-lg hover:shadow-lg ${formData?.budget === item.title ? 'shadow-lg border-black' : ''}`}
-                                >
-                                    <h2 className='text-3xl'>{item.icon}</h2>
-                                    <h2 className='font-bold text-lg'>{item.title}</h2>
-                                    <h2 className='text-sm text-gray-600'>{item.Desc}</h2>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+           {loading ? <div className='flex justify-center items-center mt-60'><RotatingCircleLoader {...loaderProps} /> </div>: 
+           <div className='sm:px-10 md:px-32 lg:px-56 px-5 mt-10'>
+               <h2 className='font-bold text-3xl'>Tell us your travel preferences</h2>
+               <p className='mt-3 text-gray-500 text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse magni rem quas tempora.</p>
+               <div className='mt-10 flex flex-col gap-5'>
+                   <div>
+                       <h2 className='text-xl my-3 font-medium'>What is the destination of choice?</h2>
+                       <Input
+                           placeholder={'Ex. New York'}
+                           type="text"
+                           onChange={(e) => handleInputChange('location', e.target.value)}
+                       />
+                   </div>
+                   <div>
+                       <h2 className='text-xl my-3 font-medium'>For how many days are you planning your trip?</h2>
+                       <Input
+                           placeholder={"Ex. 3"}
+                           type="number"
+                           onChange={(e) => handleInputChange('noOfDays', e.target.value)}
+                       />
+                   </div>
+                   <div>
+                       <h2 className='text-xl my-3 font-medium'>Who is travelling?</h2>
+                       <div className='grid grid-cols-3 gap-5 mt-5'>
+                           {SelectTravelsList.map((item, index) => (
+                               <div
+                                   key={index}
+                                   onClick={() => handleInputChange('peoples', item.title)}
+                                   className={`p-4 border cursor-pointer rounded-lg hover:shadow-lg ${formData?.peoples === item.title ? 'shadow-lg border-black' : ''}`}
+                               >
+                                   <h2 className='text-3xl'>{item.icon}</h2>
+                                   <h2 className='font-bold text-lg'>{item.title}</h2>
+                                   <h2 className='text-sm text-gray-600'>{item.Desc}</h2>
+                               </div>
+                           ))}
+                       </div>
+                   </div>
+                   <div>
+                       <h2 className='text-xl my-3 font-medium'>What is your budget?</h2>
+                       <div className='grid grid-cols-3 gap-5 mt-5'>
+                           {SelectBudget.map((item, index) => (
+                               <div
+                                   key={index}
+                                   onClick={() => handleInputChange('budget', item.title)}
+                                   className={`p-4 border cursor-pointer rounded-lg hover:shadow-lg ${formData?.budget === item.title ? 'shadow-lg border-black' : ''}`}
+                               >
+                                   <h2 className='text-3xl'>{item.icon}</h2>
+                                   <h2 className='font-bold text-lg'>{item.title}</h2>
+                                   <h2 className='text-sm text-gray-600'>{item.Desc}</h2>
+                               </div>
+                           ))}
+                       </div>
+                   </div>
+               </div>
 
-                <div className='my-10 flex justify-end'>
-                    <Button onClick={OnGenerateTrip}>
-                        {loading ? <TbLoader /> : 'Generate Trip'}
-                    </Button>
-                </div>
-            </div>
+               <div className='my-10 flex justify-end'>
+                   <Button onClick={OnGenerateTrip}>
+                       {loading ? <RotatingCircleLoader {...loaderProps} /> : 'Generate Trip'}
+                   </Button>
+               </div>
+           </div>
+           }
         </div>
     );
 }

@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { auth, db } from '../../service/firebaseConfig';
 import { addDoc, Timestamp } from 'firebase/firestore';
 import { Link, useNavigate } from 'react-router-dom';
+import { Input } from "@/components/ui/input";
+import { Button } from "../ui/button";
 
 function SignUp() {
 
@@ -55,36 +57,38 @@ function SignUp() {
     }
   }
   return (
-    <div className='flex flex-col justify-center items-center gap-5 w-full'>
-      <h2 className='text-center font-medium pt-5'>Sign Up</h2>
-      <input type="text" className='border-2 rounded p-2' placeholder='Name' value={userSignup.name} onChange={(e) => {
+    <div>
+      <h2 className='font-semibold text-3xl mx-20 my-10'>Sign Up</h2>
+      <div className='w-[80%] mx-20'>
+      <Input type="text" className='my-3' placeholder='Name' value={userSignup.name} onChange={(e) => {
         setUserSignup({
           ...userSignup,
           name: e.target.value
         })
       }}/>
-      <input type="email" className='border-2 rounded p-2' placeholder='E-mail' value={userSignup.email} 
+      <Input type="email" className='my-3' placeholder='E-mail' value={userSignup.email} 
       onChange={(e)=>{
         setUserSignup({
           ...userSignup,
           email: e.target.value
         })
       }} />
-      <input type="password" className='border-2 rounded p-2' placeholder='Password'  value={userSignup.password} onChange={(e) => {
+      <Input type="password" className='my-3' placeholder='Password'  value={userSignup.password} onChange={(e) => {
         setUserSignup({
           ...userSignup,
           password:e.target.value
         })
       }}/>
-      <button className='bg-[#8ad8c4] rounded-xl px-5 py-2'
+      <Button className='my-3'
       onClick={userSignupFunction}>
         <Link to={'/login'}>SignUp</Link>
-      </button>
+      </Button>
 
       <div>
-        <h2 className='text-black'>Have an account ?<Link className=' text-pink-500 font-bold' to={'/login'}>Login</Link></h2>
+        <h2 className='text-black font-medium'>Have an account ? <Link className=' text-pink-500 font-bold' to={'/login'}>Login</Link></h2>
       </div>
 
+    </div>
     </div>
   )
 }

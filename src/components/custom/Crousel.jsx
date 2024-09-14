@@ -34,6 +34,7 @@ export function Crousel() {
                 <Button color="white">Get Started</Button>
             </Link>
             </div>
+            
           </div>
         </div>
       </div>

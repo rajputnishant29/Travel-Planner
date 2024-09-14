@@ -10,6 +10,10 @@ import Viewtrip from'./view-trip/[tripId]/index.jsx'
 import SignUp from './components/custom/SignUp.jsx'
 import { ThemeProvider } from '@material-tailwind/react'
 import Login from './components/custom/Login.jsx'
+import Leaflet from './components/custom/Leaflet.jsx'
+import SafetyTips from './components/custom/SafetyTips.jsx'
+import Vlogs from './components/custom/Vlogs.jsx'
+
 
 export default function RootLayout({ children }) {
   return (
@@ -46,7 +50,19 @@ const router = createBrowserRouter([
   {
     path:'/login',
     element:<Login/>
-  }
+  },
+  {
+    path:'/leaflet',
+    element:<Leaflet/>
+  },
+  {
+    path:'/safety-tips',
+    element:<SafetyTips/>
+  },
+  {
+    path:'/vlogs',
+    element:<Vlogs/>
+  },
 
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(

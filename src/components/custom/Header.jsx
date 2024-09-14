@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '../ui/button';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -28,6 +28,18 @@ function Header() {
     <div className='p-2 shadow-sm flex justify-between items-center px-5'>
       <img src="./logo.svg" alt="Logo" />
       <div>
+        <Link to={'/'} className='ml-5 p-3 font-semibold rounded-lg hover:bg-blue-gray-50'>
+          Home
+        </Link>
+        <Link to={'/leaflet'} className='ml-5 p-3 font-semibold rounded-lg hover:bg-blue-gray-50'>
+          Show Map
+        </Link>
+        <Link to={'/safety-tips'} className='ml-5 p-3 font-semibold rounded-lg hover:bg-blue-gray-50'>
+          Safety Tips
+        </Link>
+        <Link to={'/vlogs'} className='mx-5 p-3 font-semibold rounded-lg hover:bg-blue-gray-50'>
+          Travel Vlogs
+        </Link>
         {!isLoggedIn && (
           <Button onClick={handleSignInClick}>
             Sign In

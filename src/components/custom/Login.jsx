@@ -3,6 +3,9 @@ import { onSnapshot, query, collection, where } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { db, auth } from '../../service/firebaseConfig';
+import { Input } from "@/components/ui/input";
+import { Button } from "../ui/button";
+
 
 function Login() {
   const navigate = useNavigate();
@@ -59,42 +62,43 @@ function Login() {
   };
 
   return (
-    <div className='flex flex-col justify-center items-center gap-5 w-full'>
-      <h2 className='text-center font-medium pt-5'>Login</h2>
+   <div>
+      <h2 className='font-semibold text-3xl mx-20 my-10'>Login</h2>
+     <div className='w-[80%] mx-20'>
       
-      <input 
-        type="email" 
-        className='border-2 rounded p-2' 
+      <Input 
+        className="my-3"
+        type="email"  
         placeholder='E-mail'
         value={userLogin.email}
         onChange={(e) => setUserLogin({
           ...userLogin,
           email: e.target.value
         })}
-        disabled={isLoggedIn} // Disable input if logged in
+        disabled={isLoggedIn} 
       />
       
-      <input 
-        type="password" 
-        className='border-2 rounded p-2' 
+      <Input 
+        className="my-3"
+        type="password"  
         placeholder='Password'
         value={userLogin.password}
         onChange={(e) => setUserLogin({
           ...userLogin,
           password: e.target.value
         })}
-        disabled={isLoggedIn} // Disable input if logged in
+        disabled={isLoggedIn} 
       />
 
-      {error && <p className='text-red-500'>{error}</p>} {/* Display error if login fails */}
+      {error && <p className='text-red-500'>{error}</p>} 
 
-      <button 
-        className='bg-[#8ad8c4] rounded-xl px-5 py-2'
+      <Button 
+        className='my-3'
         onClick={userLoginFunction}
-        disabled={isLoggedIn} // Disable button if logged in
+        disabled={isLoggedIn} 
       >
         Log In
-      </button>
+      </Button>
 
       <div>
         <h2 className='text-black'>
@@ -103,6 +107,7 @@ function Login() {
         </h2>
       </div>
     </div>
+   </div>
   );
 }
 
