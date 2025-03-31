@@ -13,6 +13,7 @@ import Login from './components/custom/Login.jsx'
 import Leaflet from './components/custom/Leaflet.jsx'
 import SafetyTips from './components/custom/SafetyTips.jsx'
 import Vlogs from './components/custom/Vlogs.jsx'
+import Weather from './components/custom/Weather.jsx'
 
 
 export default function RootLayout({ children }) {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
   {
     path:'/vlogs',
     element:<Vlogs/>
+  },
+  {
+    path:'/weather',
+    element:<Weather/>
   },
 
 ])

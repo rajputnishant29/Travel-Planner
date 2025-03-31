@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { db } from '../../service/firebaseConfig';
 import { doc, getDoc } from 'firebase/firestore';
 import InfoSection from './components/InfoSection';
+import Header from '../../components/custom/Header';
 // import { toast } from 'sonner';
 
 function Viewtrip() {
@@ -28,12 +29,14 @@ const GetTripData=async()=>{
     }
 }
   return (
-    <div className='p-5 md:p-10 xl:p-20'>
+    <div>
+      <Header/>
+      <div className='p-5 md:p-10 xl:p-20'>
        {/* Information Section */}
         <InfoSection trip= {trip}/>
        {/* Recommended Hotels */}
        {/* Daily Plan */}
-
+    </div>
     </div>
   )
 }

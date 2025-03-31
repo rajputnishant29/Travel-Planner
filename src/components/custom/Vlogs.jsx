@@ -29,7 +29,7 @@ function Vlogs() {
 
       try {
         const response = await fetch(
-          `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(city)}%20travel%20blog&key=AIzaSyDC7s4GgPYxP3SNfMCGCgPTz0KDsGO6QQU=&type=video&maxResults=5`
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(city)}%20travel%20blog&key=AIzaSyBjdxLiQ1gDznTVW5EbIbjpp-oEK_o92Oo&type=video&maxResults=5`
         );
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
@@ -47,7 +47,7 @@ function Vlogs() {
   return (
     <div className="w-full">
       <Header/>
-      <h2 className="text-3xl font-bold m-4 text-center">
+      <h2 className="text-3xl font-bold m-4 text-center text-[#2ba87f]">
         Travel Vlogs
       </h2>
       <div className="w-[96%] flex justify-center items-center">
@@ -66,7 +66,7 @@ function Vlogs() {
       <div>
         {videos.length > 0 ? (
           videos.map((video) => (
-            <div key={video.id.videoId} className="flex justify-center m-10 p-5 rounded-md hover:scale-95">
+            <div key={video.id.videoId} className="flex justify-center mx-20 my-5 p-10 rounded-md overflow-hidden bg-blue-gray-100 hover:scale-95 transition-all">
               <iframe
                 width="900"
                 height="315"

@@ -3,21 +3,21 @@ export const SelectTravelsList=[
         id: 1,
         title:'Just Me',
         Desc:'A solo traveller in exploration',
-        icon:'❤️',
+        icon:'👦',
         people:'1'
     },
     {
         id: 2,
         title:'A couple',
         Desc:'Two travellers in tandem',
-        icon:'🧑‍🤝‍🧑',
+        icon:'💑',
         people:'2'
     },
     {
         id: 3,
         title:'Family',
         Desc:'Family trip ',
-        icon:'💕 ',
+        icon:'👨‍👩‍👧‍👦',
         people:'5'
     }
 ]
@@ -33,7 +33,7 @@ export const SelectBudget=[
         id: 2,
         title:'Medium',
         Desc:'Mid Price Hotels and  Fare Price Tickets',
-        icon:'💵',
+        icon:'💷',
         Budget:'Medium'
     },
     {
