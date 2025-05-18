@@ -46,5 +46,6 @@
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.6",
     "vite": "^5.3.4"
-  }
+  },
+  "_note": "This file was updated for a commit."
 }

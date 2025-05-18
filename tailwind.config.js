@@ -76,3 +76,5 @@ module.exports = withMT({
   },
   plugins: [require("tailwindcss-animate")],
 });
+
+//Tailwind connfig.css

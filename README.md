@@ -1,8 +1,53 @@
-# React + Vite
+# ✈️ Travell Planner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 🌍 **Your AI-Powered Travel Companion**  
+Plan your entire trip effortlessly using AI — from personalized itineraries to hotel suggestions, live weather, safety tips, interactive maps, vlogs, and more!
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Stack
+
+| Technology     | Description                              |
+|----------------|------------------------------------------|
+| ⚛️ React.js     | Frontend UI framework                    |
+| 🔥 Firebase     | Authentication & Realtime Database       |
+| 🤖 Gemini API   | AI-powered itinerary & content generation |
+| 🎨 Tailwind CSS | Styling & responsive design              |
+
+---
+
+## ✨ Features
+
+- 🎯 **Smart Trip Planning**  
+  Personalized itineraries based on:
+  - Number of travelers
+  - Destination
+  - Budget
+  - Duration of the trip
+
+- 🏨 **Hotel Suggestions**  
+  Recommends stays that match your preferences and budget.
+
+- 📅 **Booking System**  
+  Simple and quick hotel and activity booking options.
+
+- 🗺️ **Interactive Map**  
+  Visualize trip locations, routes, and top spots.
+
+- 🌦️ **Live Weather Updates**  
+  Real-time forecasts for your travel days.
+
+- 🛡️ **Travel Safety Tips**  
+  AI-generated tips based on your destination.
+
+- 📹 **Vlog Recommendations**  
+  Get inspired with curated travel vlogs and guides.
+
+---
+
+## 🚀 How to Run the Project Locally
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/yourusername/travell-planner.git
+cd travell-planner

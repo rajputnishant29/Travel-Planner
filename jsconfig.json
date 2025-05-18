@@ -13,6 +13,7 @@
       "paths": {
         "@/*": ["./src/*"]
       }
-    }
+    },
+    "_note": "This file was updated for a commit."
   }
   

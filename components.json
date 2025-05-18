@@ -1,8 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema.json",
+
   "style": "default",
   "rsc": false,
   "tsx": false,
+
   "tailwind": {
     "config": "tailwind.config.js",
     "css": "src/index.css",
@@ -10,8 +12,10 @@
     "cssVariables": true,
     "prefix": ""
   },
+
   "aliases": {
     "components": "@/components",
     "utils": "@/lib/utils"
-  }
+  },
+  "_note": "This file was updated for a commit."
 }
