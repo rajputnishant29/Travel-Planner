@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Carousel, Typography, Button } from "@material-tailwind/react";
+import { useState, useEffect } from "react";
+import { Carousel, Button } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
 export function Crousel() {
@@ -12,47 +12,49 @@ export function Crousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 1000); // Change slide every 3 seconds
+    }, 4000); // Change slide every 4 seconds
 
     return () => clearInterval(interval);
   }, [images.length]);
 
   return (
-    <Carousel
-      className="rounded-xl"
-      activeIndex={activeIndex} // Control which slide is shown
-      onChange={(index) => setActiveIndex(index)} // Handle manual slide change
-    >
-      {images.map((image, index) => (
-        <div key={index} className="relative h-full w-full">
-          <img
-            src={image}
-            alt={`image ${index + 1}`}
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
-            <div className="w-3/4 text-center md:w-2/4">
-              <Typography
-                variant="h1"
-                color="white"
-                className="mb-4 text-3xl md:text-4xl lg:text-5xl"
-              >
-                <h1 className="font-extrabold text-[40px] text-center mt-12">
-                  <span className="text-[#8ad8c4]">
-                    Discover your next adventure with us :
-                  </span>{" "}
-                  Personalized Planning at your Fingertips
+    <div className="relative">
+      <Carousel
+        className="overflow-hidden"
+        activeIndex={activeIndex}
+        onChange={(index) => setActiveIndex(index)}
+        transition={{ duration: 1.5 }} // Smooth transition
+      >
+        {images.map((image, index) => (
+          <div key={index} className="relative h-full w-full">
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              className="h-screen w-full object-cover"
+            />
+            <div className="absolute inset-0 grid w-full place-items-center bg-black/60">
+              <div className="w-3/4 text-center md:w-2/4 px-4 md:px-0">
+                <h1 className="font-extrabold text-2xl md:text-4xl lg:text-5xl text-[#8ad8c4]">
+                  Discover Your Next Adventure with Us:
+                  <span className="block text-white mt-2">
+                    Personalized Planning at Your Fingertips
+                  </span>
                 </h1>
-              </Typography>
-              <div className="flex justify-center gap-2">
-                <Link to={'/create-trip'}>
-                  <Button color="white">Get Started</Button>
-                </Link>
+                <div className="flex justify-center gap-4 mt-6">
+                  <Link to="/create-trip">
+                    <Button
+                      color="white"
+                      className="text-black font-bold px-6 py-3 rounded-lg hover:bg-gray-400 transition duration-300"
+                    >
+                      Get Started
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
-    </Carousel>
+        ))}
+      </Carousel>
+    </div>
   );
 }

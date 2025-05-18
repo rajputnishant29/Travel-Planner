@@ -5,7 +5,7 @@ import Header from "../custom/Header";
 
 function Weather() {
   const [weather, setWeather] = useState(null);
-  const [city, setCity] = useState(""); // Default city
+  const [city, setCity] = useState(""); 
   const API_KEY = "26e3d37b8a19c9f5faacbd2d91d3a693";
 
   useEffect(() => {
@@ -28,8 +28,8 @@ function Weather() {
   }, [city]);
 
   const convertTimestampToTime = (timestamp) => {
-    const date = new Date(timestamp * 1000); // Convert to milliseconds
-    return date.toLocaleTimeString(); // Format the time as HH:MM:SS
+    const date = new Date(timestamp * 1000); 
+    return date.toLocaleTimeString(); 
   };
 
   const handleCityChange = (e) => {
@@ -39,7 +39,7 @@ function Weather() {
   return (
     <div>
         <Header/>
-      <h2 className="text-center text-3xl font-bold mt-10 text-[#2ba87f]">
+      <h2 className="text-center text-3xl font-bold mt-20 text-[#2ba87f]">
         Check Weather Before your Trip!!{" "}
       </h2>
       <div className="w-[96%] flex justify-center items-center">

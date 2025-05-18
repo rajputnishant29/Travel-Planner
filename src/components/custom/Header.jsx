@@ -25,35 +25,47 @@ function Header() {
   };
 
   return (
-    <div className='p-1 shadow-sm flex justify-between items-center px-5'>
-      <div className='flex justify-center items-center'>
-      <img className='h-12' src="./Ai_trip_logo.jpeg" alt="Logo" />
-      <h2 className='px-1 font-bold text-[#3e9782] pt-4'>AI Trip Planer</h2>
-      </div>
-      <div>
-        <Link to={'/'} className='ml-5 p-3 font-semibold rounded-lg hover:bg-blue-gray-50'>
-          Home
-        </Link>
-        <Link to={'/leaflet'} className='ml-5 p-3 font-semibold rounded-lg hover:bg-blue-gray-50'>
-          Show Map
-        </Link>
-        <Link to={'/safety-tips'} className='ml-5 p-3 font-semibold rounded-lg hover:bg-blue-gray-50'>
-          Safety Tips
-        </Link>
-        <Link to={'/weather'} className='ml-5 p-3 font-semibold rounded-lg hover:bg-blue-gray-50'>
-          Check Weather
-        </Link>
-        <Link to={'/vlogs'} className='mx-5 p-3 font-semibold rounded-lg hover:bg-blue-gray-50'>
-          Travel Vlogs
-        </Link>
+    <header className="fixed top-0 w-full z-50 bg-transparent text-[#8ad8c4] shadow-md">
+      <div className="flex justify-between items-center px-6 py-3">
+        {/* Logo and Title */}
+        <div className="flex items-center space-x-3">
+          <img className="h-10 w-10 rounded-full" src="./Ai_trip_logo.jpeg" alt="Logo" />
+          <h2 className="font-bold text-lg md:text-xl text-[#8ad8c4]">
+            AI Trip Planner
+          </h2>
+        </div>
+
+        {/* Navigation Links */}
+        <nav className="hidden md:flex space-x-6">
+          <NavLink to="/" label="Home" />
+          <NavLink to="/leaflet" label="Show Map" />
+          <NavLink to="/safety-tips" label="Safety Tips" />
+          <NavLink to="/weather" label="Check Weather" />
+          <NavLink to="/vlogs" label="Travel Vlogs" />
+        </nav>
+
+        {/* Sign In Button */}
         {!isLoggedIn && (
-          <Button onClick={handleSignInClick}>
+          <Button
+            onClick={handleSignInClick}
+            className="bg-[#8ad8c4] hover:bg-[#6fb6a3] text-black font-semibold px-4 py-2 rounded-lg transition duration-300"
+          >
             Sign In
           </Button>
         )}
       </div>
-    </div>
+    </header>
   );
 }
+
+// Reusable NavLink Component for Cleaner Code
+const NavLink = ({ to, label }) => (
+  <Link
+    to={to}
+    className="text-[#227a6c] font-semibold hover:underline transition duration-300"
+  >
+    {label}
+  </Link>
+);
 
 export default Header;

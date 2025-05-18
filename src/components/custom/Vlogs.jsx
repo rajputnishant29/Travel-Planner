@@ -47,7 +47,7 @@ function Vlogs() {
   return (
     <div className="w-full">
       <Header/>
-      <h2 className="text-3xl font-bold m-4 text-center text-[#2ba87f]">
+      <h2 className="text-3xl font-bold m-4 mt-20 text-center text-[#2ba87f]">
         Travel Vlogs
       </h2>
       <div className="w-[96%] flex justify-center items-center">

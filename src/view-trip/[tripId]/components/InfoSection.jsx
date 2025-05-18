@@ -34,7 +34,7 @@ function InfoSection({trip}) {
                     <div className='my-2'>
                         <h2 className='font-medium'> 🏨{hotel.HotelName}</h2>
                         <h2 className='text-sm text-gray-600 my-2'>📌 {hotel.HotelAddress}</h2>
-                        <h2 className='text-xs text-gray-500 bg-zinc-300 p-1 rounded'>{hotel.description}</h2>
+                        <h2 className='text-xs text-gray-500 bg-zinc-300 p-1 rounded'>{hotel.descriptions}</h2>
                         <h2 className='text-lg font-bold text-green-500'>💵 {hotel.Price}</h2>
                         <h2 className='text-lg font-bold text-orange-400 mb-1'>⭐ {hotel.rating}</h2>
                         <a href='https://www.oyorooms.com/'><Button color="white">Book Now</Button></a>
