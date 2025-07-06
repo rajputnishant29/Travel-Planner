@@ -25,7 +25,7 @@ function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-transparent text-[#8ad8c4] shadow-md">
+    <header className="fixed top-0 w-full z-50 bg-white/10 backdrop-blur-md rounded-lg text-[#8ad8c4] shadow-md">
       <div className="flex justify-between items-center px-6 py-3">
         {/* Logo and Title */}
         <div className="flex items-center space-x-3">
@@ -69,3 +69,4 @@ const NavLink = ({ to, label }) => (
 );
 
 export default Header;
+
