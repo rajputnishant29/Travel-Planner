@@ -51,3 +51,18 @@ Plan your entire trip effortlessly using AI — from personalized itineraries to
 ```bash
 git clone https://github.com/yourusername/travell-planner.git
 cd travell-planner
+
+ How AI is Used in Travell Planner
+Travell Planner uses Google's Gemini AI to make trip planning intelligent and seamless:
+
+🧳 Analyzes user preferences (location, budget, duration, number of people)
+
+🗓️ Generates optimized itineraries day-by-day
+
+🏨 Suggests hotels and activities based on budget
+
+⚠️ Provides safety and travel tips for specific regions
+
+📺 Recommends vlogs and video guides to enhance the travel experience
+
+The AI responds contextually and helps users make informed travel decisions — all in one place.
